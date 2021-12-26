@@ -12,7 +12,6 @@ var app = new Vue({
         .then(response=> response.json())
         .then(userList => {
             this.users = userList.objects;
-            console.log(typeof(userList));
         },
         )
     },
