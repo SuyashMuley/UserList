@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <!-- Bootstrap CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Vue Js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div class="container" id="app">
+      <!-- Input for Search Queries -->
+      <input type="text" v-model="filter" placeholder="Search Users" class="form-control mt-4 mb-4">
+      <!-- Table to display user list -->
+      <table v-if="users.length" class="table table-bordered mt-4">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Job Title</th>
+            <th scope="col">Email Address</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Email</th>
+            <th scole="col">Phone</th>
+            <th scope="col">Company</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="user in filtered">
+            <th>{{ user.ID }}</td>
+            <th>{{ user.JobTitle }}</td>
+            <td>{{ user.EmailAddress }}</td>
+            <td>{{ user.FirstNameLastName }}</td>
+            <td>{{ user.Email }}</td>
+            <td>{{ user.Phone }}</td>
+            <td>{{ user.Company }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="/search.js"></script>
+  </body>
+</html>
